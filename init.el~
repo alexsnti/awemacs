@@ -17,6 +17,8 @@
 ;; Font size
 (set-face-attribute 'default nil :height 105)
 
+(add-to-list 'custom-theme-load-path "~/.emacs.d/elpa/cyberpunk-theme.el")
+
 ;; binding files to mode
 (add-to-list 'auto-mode-alist '("\\.phtml\\'" . html-mode))
 (add-to-list 'auto-mode-alist '("\\.tpl\\.php\\'" . html-mode))
@@ -76,3 +78,8 @@
    (intern
     (or (completing-read "M-x " (all-completions "" obarray 'commandp))))))
 ;; End of IDO conf
+
+
+;; color-identifiers-mode
+(add-hook 'after-init-hook 'global-color-identifiers-mode)
+

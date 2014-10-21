@@ -1,5 +1,11 @@
 ;; WELCOME TO AWALEX EMACS CONFIG FILE ;;
 
+;; My cyberpunk theme
+(add-to-list 'custom-theme-load-path "~/.emacs.d/themes/")
+
+;; Columb mode
+(column-number-mode 1)
+
 (custom-set-variables
  ;; custom-set-variables was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.
@@ -16,8 +22,6 @@
  )
 ;; Font size
 (set-face-attribute 'default nil :height 105)
-
-(add-to-list 'custom-theme-load-path "~/.emacs.d/elpa/cyberpunk-theme.el")
 
 ;; binding files to mode
 (add-to-list 'auto-mode-alist '("\\.phtml\\'" . html-mode))
@@ -78,3 +82,14 @@
    (intern
     (or (completing-read "M-x " (all-completions "" obarray 'commandp))))))
 ;; End of IDO conf
+
+
+;; color-identifiers-mode
+(add-hook 'after-init-hook 'global-color-identifiers-mode)
+
+;; key bindings
+
+(global-set-key (kbd "S-<up>") 'windmove-up)
+(global-set-key (kbd "S-<left>") 'windmove-left)
+(global-set-key (kbd "S-<right>") 'windmove-right)
+(global-set-key (kbd "S-<down>") 'windmove-down)
