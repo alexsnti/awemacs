@@ -9,20 +9,24 @@
 ;; Font size
 (set-face-attribute 'default nil :height 105)
 
+;; Js indent fix
+(setq javascript-indent-level 2)
+
 ;; disabling startup screen
 (setq inhibit-startup-message t)
 
 ;; binding files to mode
 (add-to-list 'auto-mode-alist '("\\.phtml\\'" . html-mode))
-(add-to-list 'auto-mode-alist '("\\.tpl\\.php\\'" . html-mode))
+(add-to-list 'auto-mode-alist '("\\.tpl\\.php\\'" . web-mode))
 (add-to-list 'auto-mode-alist '("\\.blade\\.php\\'" . html-mode))
 (add-to-list 'auto-mode-alist '("\\.jsp\\'" . html-mode))
 (add-to-list 'auto-mode-alist '("\\.as[cp]x\\'" . html-mode))
 (add-to-list 'auto-mode-alist '("\\.erb\\'" . html-mode))
-(add-to-list 'auto-mode-alist '("\\.twig\\'" . html-mode))
+(add-to-list 'auto-mode-alist '("\\.twig\\'" . web-mode))
 (add-to-list 'auto-mode-alist '("\\.html?\\'" . html-mode))
 (add-to-list 'auto-mode-alist
              '("/\\(views\\|html\\|theme\\|templates\\)/.*\\.php\\'" . html-mode))
+(add-to-list 'auto-mode-alist '("\\.php?\\'" . php-mode))
 
 ;; disabling toolbar
 (tool-bar-mode -1)
@@ -64,14 +68,19 @@
                                        initial-input hist def)))))
   (unless ad-return-value
     ad-do-it))
-(define-key global-map [(meta ?x)] 'ido-meta-x)
-(defun ido-meta-x ()
-  (interactive)
-  (call-interactively
-   (intern
-    (or (completing-read "M-x " (all-completions "" obarray 'commandp))))))
+
+
+;;(define-key global-map [(meta ?x)] 'ido-meta-x)
+;; (defun ido-meta-x ()
+;;   (interactive)
+;;   (call-interactively
+;;    (intern
+;;     (or (completing-read "M-x " (all-completions "" obarray 'commandp))))))
 ;; End of IDO conf
 
+;;; Smex
+(autoload 'smex "smex")
+(global-set-key (kbd "M-x") 'smex)
 
 ;; color-identifiers-mode
 (add-hook 'after-init-hook 'global-color-identifiers-mode)
