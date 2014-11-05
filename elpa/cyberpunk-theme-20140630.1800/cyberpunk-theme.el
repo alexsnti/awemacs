@@ -86,6 +86,7 @@
       (cyberpunk-blue-8 "#4F94CD")
       (cyberpunk-magenta "#dc8cc3")
       (cyberpunk-black "#000000")
+      (cyberpunk-notthatblack "#171717")
       (cyberpunk-black-2 "#0C1021")
       (cyberpunk-black-3 "#0A0A0A")
       (cyberpunk-gray "#d3d3d3")
@@ -112,7 +113,7 @@
    `(buffers-tab ((,class (:background ,cyberpunk-black-2 :foreground ,cyberpunk-white-2))))
 
    ;;; basic coloring
-   `(default ((,class (:foreground ,cyberpunk-gray :background ,cyberpunk-black))))
+   `(default ((,class (:foreground ,cyberpunk-gray :background ,cyberpunk-notthatblack))))
    `(cursor ((,class (:background ,cyberpunk-fg))))
    `(escape-glyph-face ((,class (:foreground ,cyberpunk-red))))
    ;; `(fringe ((,class (:foreground ,cyberpunk-fg :background ,cyberpunk-bg+1))))
