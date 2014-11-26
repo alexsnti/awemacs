@@ -1,5 +1,6 @@
 ;; WELCOME TO AWALEX EMACS CONFIG FILE ;;
 (require 'cl)
+(package-initialize)
 (require 'dired+)
 ;; My cyberpunk theme
 (add-to-list 'custom-theme-load-path "~/.emacs.d/themes/")
