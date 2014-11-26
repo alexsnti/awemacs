@@ -1,6 +1,6 @@
 ;; WELCOME TO AWALEX EMACS CONFIG FILE ;;
 (require 'cl)
-
+(require 'dired+)
 ;; My cyberpunk theme
 (add-to-list 'custom-theme-load-path "~/.emacs.d/themes/")
 (load-theme 'gotham t)
@@ -100,3 +100,11 @@
   (bookmark-save)
   (interactive)
   (message"Bookmark ajouté ¯\_(ツ)_/¯"))
+
+(defun aw_new-file (x)
+  "inline doc string"
+  (interactive "sNom du fichier: ")
+  (find-file x)
+  (message "Fichier créé")
+  (eval-buffer)
+)
