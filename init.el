@@ -2,7 +2,12 @@
 (require 'cl)
 (package-initialize)
 (require 'dired+)
-;; My cyberpunk theme
+
+;; Org-mode customization
+(setq org-hide-emphasis-markers t)
+(setq-default org-src-fontify-natively t)
+
+;; Gotham theme
 (add-to-list 'custom-theme-load-path "~/.emacs.d/themes/")
 (load-theme 'gotham t)
 ;;(load-theme 'cyberpunk t)
@@ -94,8 +99,9 @@
 
 ;; using dired instead of findfile
 (global-set-key (kbd "C-x C-f") 'dired)
- 
- 
+
+
+
 (defun aw_nbm ()
   (bookmark-set)
   (bookmark-save)
@@ -106,6 +112,24 @@
   "inline doc string"
   (interactive "sNom du fichier: ")
   (find-file x)
+  (g)
   (message "Fichier créé")
-  (eval-buffer)
 )
+(custom-set-variables
+ ;; custom-set-variables was added by Custom.
+ ;; If you edit it by hand, you could mess it up, so be careful.
+ ;; Your init file should contain only one such instance.
+ ;; If there is more than one, they won't work right.
+ '(ansi-color-names-vector
+   ["#000000" "#8b0000" "#00ff00" "#ffa500" "#7b68ee" "#dc8cc3" "#93e0e3" "#dcdccc"])
+ '(custom-safe-themes
+   (quote
+    ("1d9492749ca290d1702b2f331b99a2692cda19fb1e4aae4b9e75515027afbf3b" default)))
+ '(fci-rule-color "#383838")
+ '(org-hide-emphasis-markers t))
+(custom-set-faces
+ ;; custom-set-faces was added by Custom.
+ ;; If you edit it by hand, you could mess it up, so be careful.
+ ;; Your init file should contain only one such instance.
+ ;; If there is more than one, they won't work right.
+ )
