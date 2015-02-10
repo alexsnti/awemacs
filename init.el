@@ -2,10 +2,12 @@
 (require 'cl)
 (package-initialize)
 (require 'dired+)
+(require 'dired-x)
+(setq-default dired-omit-files-p t) ; Buffer-local variable
+(setq dired-omit-files (concat dired-omit-files "^\\.?#\\|^\\.$\\|^\\.\\.$\\|^\\..*$|"))
 
-;; Org-mode customization
-(setq org-hide-emphasis-markers t)
-(setq-default org-src-fontify-natively t)
+;; JS indentation
+(setq js-indent-level 2)
 
 ;; Gotham theme
 (add-to-list 'custom-theme-load-path "~/.emacs.d/themes/")
@@ -114,22 +116,51 @@
   (find-file x)
   (g)
   (message "Fichier créé")
-)
+  )
+
+(defun orgsync ()
+  (shell-command "orgsync" )
+  (interactive)
+  (message "Fichiers synchronisés")
+  )
+
+;; Org-mode customization
+(setq org-hide-emphasis-markers t)
+
+(setq-default org-src-fontify-natively t)
+
+(setq org-todo-keywords 
+      '((sequence "TODO" "DOING" "BLOCKED" "REVIEW" "|" "DONE" "ARCHIVED" "WTF")))
+
+(setq org-todo-keyword-faces
+  '(("TODO" . org-warning)
+   ("DOING" . "yellow")
+   ("BLOCKED" . "red")
+   ("REVIEW" . "orange")
+   ("DONE" . "green")
+   ("WTF" . "pink")
+   ("ARCHIVED" .  "blue"))) 
+
+
 (custom-set-variables
  ;; custom-set-variables was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
+ '(ansi-color-faces-vector
+   [default default default italic underline success warning error])
  '(ansi-color-names-vector
    ["#000000" "#8b0000" "#00ff00" "#ffa500" "#7b68ee" "#dc8cc3" "#93e0e3" "#dcdccc"])
  '(custom-safe-themes
    (quote
-    ("1d9492749ca290d1702b2f331b99a2692cda19fb1e4aae4b9e75515027afbf3b" default)))
+    ("f0a99f53cbf7b004ba0c1760aa14fd70f2eabafe4e62a2b3cf5cabae8203113b" "1d9492749ca290d1702b2f331b99a2692cda19fb1e4aae4b9e75515027afbf3b" default)))
  '(fci-rule-color "#383838")
- '(org-hide-emphasis-markers t))
+ '(js-curly-indent-offset 2)
+ '(org-hide-emphasis-markers t t))
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
  )
+
