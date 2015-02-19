@@ -141,6 +141,12 @@
    ("WTF" . "pink")
    ("ARCHIVED" .  "blue"))) 
 
+;; Get backup file out of sight
+(setq backup-directory-alist
+          `((".*" . ,temporary-file-directory)))
+    (setq auto-save-file-name-transforms
+          `((".*" ,temporary-file-directory t)))
+
 
 (custom-set-variables
  ;; custom-set-variables was added by Custom.
