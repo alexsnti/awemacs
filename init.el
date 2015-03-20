@@ -1,8 +1,5 @@
 ;; WELCOME TO AWALEX EMACS CONFIG FILE ;;
 (add-to-list 'load-path "/home/alex/.emacs.d/packages/")
-(require 'highlight-indentation)
-(set-face-background 'highlight-indentation-face "#36475e")
-(set-face-background 'highlight-indentation-current-column-face "#c3b3b3")
 
 (require 'cl)
 (package-initialize)
