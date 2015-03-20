@@ -1,4 +1,9 @@
 ;; WELCOME TO AWALEX EMACS CONFIG FILE ;;
+(add-to-list 'load-path "/home/alex/.emacs.d/packages/")
+(require 'highlight-indentation)
+(set-face-background 'highlight-indentation-face "#36475e")
+(set-face-background 'highlight-indentation-current-column-face "#c3b3b3")
+
 (require 'cl)
 (package-initialize)
 (require 'dired+)
@@ -30,14 +35,13 @@
 ;; binding files to mode
 (add-to-list 'auto-mode-alist '("\\.phtml\\'" . html-mode))
 (add-to-list 'auto-mode-alist '("\\.tpl.php\\'" . web-mode))
-(add-to-list 'auto-mode-alist '("\\.blade\\.php\\'" . html-mode))
 (add-to-list 'auto-mode-alist '("\\.jsp\\'" . html-mode))
 (add-to-list 'auto-mode-alist '("\\.as[cp]x\\'" . html-mode))
 (add-to-list 'auto-mode-alist '("\\.erb\\'" . html-mode))
 (add-to-list 'auto-mode-alist '("\\.twig\\'" . web-mode))
 (add-to-list 'auto-mode-alist '("\\.html?\\'" . html-mode))
 (add-to-list 'auto-mode-alist
-             '("/\\(views\\|html\\|theme\\|templates\\)/.*\\.php\\'" . html-mode))
+             '("/\\(views\\|html\\|theme\\|templates\\)/.*\\.php\\'" . web-mode))
 (add-to-list 'auto-mode-alist '("\\.php?\\'" . php-mode))
 
 ;; disabling toolbar
@@ -118,11 +122,17 @@
   (message "Fichier créé")
   )
 
+(defun aw_pdb ()
+  (interactive)
+  (print "import pdb; pdb.set_trace()")
+  )
+
 (defun orgsync ()
   (shell-command "orgsync" )
   (interactive)
   (message "Fichiers synchronisés")
   )
+
 
 ;; Org-mode customization
 (setq org-hide-emphasis-markers t)
@@ -148,6 +158,7 @@
           `((".*" ,temporary-file-directory t)))
 
 
+
 (custom-set-variables
  ;; custom-set-variables was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.
@@ -157,10 +168,14 @@
    [default default default italic underline success warning error])
  '(ansi-color-names-vector
    ["#000000" "#8b0000" "#00ff00" "#ffa500" "#7b68ee" "#dc8cc3" "#93e0e3" "#dcdccc"])
+ '(custom-enabled-themes (quote (gotham)))
  '(custom-safe-themes
    (quote
-    ("f0a99f53cbf7b004ba0c1760aa14fd70f2eabafe4e62a2b3cf5cabae8203113b" "1d9492749ca290d1702b2f331b99a2692cda19fb1e4aae4b9e75515027afbf3b" default)))
+    ("dc758223066a28f3c6ef6c42c9136bf4c913ec6d3b710794252dc072a3b92b14" "f0a99f53cbf7b004ba0c1760aa14fd70f2eabafe4e62a2b3cf5cabae8203113b" "1d9492749ca290d1702b2f331b99a2692cda19fb1e4aae4b9e75515027afbf3b" default)))
  '(fci-rule-color "#383838")
+ '(grep-find-ignored-directories
+   (quote
+    ("SCCS" "RCS" "CVS" "MCVS" ".svn" ".git" ".hg" ".bzr" "_MTN" "_darcs" "{arch}" "migrations")))
  '(js-curly-indent-offset 2)
  '(org-hide-emphasis-markers t t))
 (custom-set-faces

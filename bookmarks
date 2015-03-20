@@ -1,0 +1,41 @@
+;;;; Emacs Bookmark Format Version 1 ;;;;
+;;; This format is meant to be slightly human-readable;
+;;; nevertheless, you probably don't want to edit it.
+;;; -*- End Of Bookmark File Format Version Stamp -*-
+(("Siblu"
+ (filename . "/var/www/siblu/altsrc/")
+ (front-context-string . "ajax_helpers\n  -")
+ (rear-context-string . " avril 25  2014 ")
+ (position . 122))
+("Vinexpo"
+ (filename . "/var/www/vinexpo/src/")
+ (front-context-string . "apache\n  drwxr-x")
+ (rear-context-string . " févr. 18 10:16 ")
+ (position . 120))
+("Project folder"
+ (filename . "/var/www/")
+ (front-context-string . "phyto\n  drwxrwxr")
+ (rear-context-string . " janv.  6 10:55 ")
+ (position . 1213))
+("Perso"
+ (filename . "~/Documents/perso/")
+ (front-context-string . "bltnico-jquery-m")
+ (rear-context-string . " nov.   4 17:08 ")
+ (position . 223))
+("Organisation"
+ (filename . "~/organisation/")
+ (front-context-string . ".git\n  -rw-r--r-")
+ (rear-context-string . " déc.   8 09:36 ")
+ (position . 220))
+("Emacs Folder"
+ (filename . "~/.emacs.d/")
+ (front-context-string . "ac-comphist.dat\n")
+ (rear-context-string . " nov.  24 16:30 ")
+ (position . 216))
+#1=(#("Phyto" 0 5
+      (bmkp-full-record #1#))
+    (filename . "/var/www/phyto/")
+    (front-context-string . ".git\n  -rw-r--r-")
+    (rear-context-string . " nov.  25 18:08 ")
+    (position . 223))
+)
