@@ -1,6 +1,6 @@
 ;; WELCOME TO AWALEX EMACS CONFIG FILE ;;
 (add-to-list 'load-path "/home/alex/.emacs.d/packages/")
-
+(setq frame-title-format "%b")
 (require 'cl)
 (package-initialize)
 (require 'dired+)
@@ -131,6 +131,21 @@
   )
 
 
+(defun aw_pdb ()
+  "Insert pdb import and trace at cursor point."
+  (interactive)
+  (insert "import pdb; pdb.set_trace()")
+  (backward-char 4))
+
+(defun aw_pyencoding ()
+  "Insert encoding routine for python file"
+  (interactive)
+  (insert "# -*- coding:utf-8 -*-")
+  (newline)
+  (insert "import logging; logger = logging.getLogger(__name__)")
+  (backward-char 4)
+  )
+          
 ;; Org-mode customization
 (setq org-hide-emphasis-markers t)
 
@@ -153,6 +168,7 @@
           `((".*" . ,temporary-file-directory)))
     (setq auto-save-file-name-transforms
           `((".*" ,temporary-file-directory t)))
+
 
 
 
