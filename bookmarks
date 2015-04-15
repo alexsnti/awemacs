@@ -2,7 +2,12 @@
 ;;; This format is meant to be slightly human-readable;
 ;;; nevertheless, you probably don't want to edit it.
 ;;; -*- End Of Bookmark File Format Version Stamp -*-
-(("Siblu"
+(("Daucy-fier"
+ (filename . "/var/www/daucy-fier/")
+ (front-context-string . "bin\n  -rw-r--r--")
+ (rear-context-string . " oct.  15 17:54 ")
+ (position . 123))
+("Siblu"
  (filename . "/var/www/siblu/altsrc/")
  (front-context-string . "ajax_helpers\n  -")
  (rear-context-string . " avril 25  2014 ")
