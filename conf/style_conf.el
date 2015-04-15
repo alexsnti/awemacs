@@ -10,7 +10,9 @@
 ;; JS indentation
 (setq js-indent-level 2)
 
-
 ;; Moe Theme configration
 (require 'moe-theme)
 
+;; Style at startup
+(moe-light)
+(powerline-moe-theme)
