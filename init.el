@@ -24,6 +24,9 @@
 ;; Every custom functions
 (load "~/.emacs.d/conf/custom_functions.el")
 
+;; Utils
+(load "~/.emacs.d/conf/utils.el")
+
 
 
 (custom-set-variables
