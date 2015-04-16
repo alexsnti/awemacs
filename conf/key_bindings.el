@@ -3,6 +3,8 @@
 (global-set-key '[f6]  'aw_pyencoding)
 (global-set-key '[f7]  'moe-light)
 (global-set-key '[f8]  'moe-dark)
+(global-set-key '[f9]  'neotree-toggle)
+(global-set-key '[f12]  'grep-find)
 
 ;; key bindings
 (global-set-key (kbd "S-<up>") 'windmove-up)
@@ -12,3 +14,4 @@
 
 ;; using dired instead of findfile
 (global-set-key (kbd "C-x C-f") 'dired)
+

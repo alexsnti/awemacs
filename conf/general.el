@@ -1,4 +1,5 @@
 ;; GENERAL SETTINGS
+
 (add-to-list 'load-path "/home/alex/.emacs.d/packages/")
 
 (setq frame-title-format "%b")
@@ -51,3 +52,5 @@
 (setq rcirc-server-alist
       '(("dev.websiteburo.com" :port 6697 :encryption tls
 	 :channels ("#wsb #IEI"))))
+
+(add-to-list 'load-path "~/.emacs.d/packages/neotree")
